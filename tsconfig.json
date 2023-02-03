@@ -12,6 +12,9 @@
     // Что бы не писать * as в импортах, если module.exports
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
