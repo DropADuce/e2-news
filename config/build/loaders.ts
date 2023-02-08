@@ -3,7 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 import {IBuildOptions} from "./types/config";
 
-export const getBuildLoaders = ({isDev, paths}: IBuildOptions): Array<webpack.RuleSetRule> => {
+export const getBuildLoaders = ({isDev}: IBuildOptions): Array<webpack.RuleSetRule> => {
 
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
@@ -24,15 +24,47 @@ export const getBuildLoaders = ({isDev, paths}: IBuildOptions): Array<webpack.Ru
         ],
     }
 
-    // babel-loader не нужен, так как typescript
+    const assetsLoaders = [
+        {
+            test: /\.(png|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+        },
+        {
+            test: /\.svg$/i,
+            use: ['@svgr/webpack']
+        }
+    ]
+
     const typeScriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
     }
 
+    const babelLoader = {
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env'],
+                plugins: [
+                    [
+                        'i18next-extract',
+                        {
+                            locales: ['ru', 'en'],
+                            keyAsDefaultValue: true,
+                        }
+                    ]
+                ]
+            }
+        }
+    }
+
     return [
+        babelLoader,
         typeScriptLoader,
         cssLoaders,
+        ...assetsLoaders,
     ]
 }

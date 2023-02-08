@@ -21,6 +21,7 @@ export const buildWebpackConfig = (options: IBuildOptions): webpack.Configuratio
             filename: '[name].[contenthash].js',
             path: paths.build,
             clean: true,
+            assetModuleFilename: 'assets',
         },
         plugins: getBuildPlugins(options),
         module: {
