@@ -1,10 +1,14 @@
 import React from "react";
+import {useTranslation} from "react-i18next";
 
 export default () => {
+
+    const {t} = useTranslation('about');
+
     return (
         <div>
             <h1>
-                ЭТО СТРАНИЦА ОБО МНЕ
+                {t('ЭТО СТРАНИЦА ОБО МНЕ')}
             </h1>
         </div>
     )

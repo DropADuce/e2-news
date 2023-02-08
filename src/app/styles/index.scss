@@ -10,4 +10,13 @@
   color: var(--primary-color);
 
   min-height: 100vh;
+
+  &__content {
+    display: flex;
+  }
+
+  &__page-wrapper {
+    flex-grow: 1;
+    padding: var(--default-spacing);
+  }
 }
