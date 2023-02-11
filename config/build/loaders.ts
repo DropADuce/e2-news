@@ -1,9 +1,9 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import {IBuildOptions} from "./types/config";
+import { IBuildOptions } from './types/config';
 
-export const getBuildLoaders = ({isDev}: IBuildOptions): Array<webpack.RuleSetRule> => {
+export const getBuildLoaders = ({ isDev }: IBuildOptions): Array<webpack.RuleSetRule> => {
 
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
@@ -16,13 +16,13 @@ export const getBuildLoaders = ({isDev}: IBuildOptions): Array<webpack.RuleSetRu
                         auto: (resPath: string) => resPath.includes('.module'),
                         localIdentName: isDev
                             ? '[path][name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:8]'
+                            : '[hash:base64:8]',
                     },
                 },
             },
-            "sass-loader"
+            'sass-loader',
         ],
-    }
+    };
 
     const assetsLoaders = [
         {
@@ -31,21 +31,21 @@ export const getBuildLoaders = ({isDev}: IBuildOptions): Array<webpack.RuleSetRu
         },
         {
             test: /\.svg$/i,
-            use: ['@svgr/webpack']
-        }
-    ]
+            use: ['@svgr/webpack'],
+        },
+    ];
 
     const typeScriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-    }
+    };
 
     const babelLoader = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
                 plugins: [
@@ -54,17 +54,17 @@ export const getBuildLoaders = ({isDev}: IBuildOptions): Array<webpack.RuleSetRu
                         {
                             locales: ['ru', 'en'],
                             keyAsDefaultValue: true,
-                        }
-                    ]
-                ]
-            }
-        }
-    }
+                        },
+                    ],
+                ],
+            },
+        },
+    };
 
     return [
         babelLoader,
         typeScriptLoader,
         cssLoaders,
         ...assetsLoaders,
-    ]
-}
+    ];
+};

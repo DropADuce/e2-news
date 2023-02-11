@@ -1,7 +1,7 @@
-import path from "path";
+import path from 'path';
 
-import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
-import {IBuildEnv, IBuildPaths} from "./config/build/types/config";
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { IBuildEnv, IBuildPaths } from './config/build/types/config';
 
 export default ({ mode: buildMode, port }: IBuildEnv) => {
     const mode = buildMode || 'development';
@@ -13,7 +13,7 @@ export default ({ mode: buildMode, port }: IBuildEnv) => {
         build: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
         src: path.resolve(__dirname, 'src'),
-    }
+    };
 
     return  buildWebpackConfig({
         mode,
@@ -21,4 +21,4 @@ export default ({ mode: buildMode, port }: IBuildEnv) => {
         isDev,
         port: PORT,
     });
-}
+};

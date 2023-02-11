@@ -1,10 +1,10 @@
 import webpack from 'webpack';
 
-import {getBuildPlugins} from './plugins';
-import {getBuildLoaders} from './loaders';
-import {getBuildResolvers} from './resolvers';
-import {IBuildOptions} from './types/config';
-import {getBuildWatcher} from "./watcher";
+import { getBuildPlugins } from './plugins';
+import { getBuildLoaders } from './loaders';
+import { getBuildResolvers } from './resolvers';
+import { IBuildOptions } from './types/config';
+import { getBuildWatcher } from './watcher';
 
 export const buildWebpackConfig = (options: IBuildOptions): webpack.Configuration => {
 
@@ -30,5 +30,5 @@ export const buildWebpackConfig = (options: IBuildOptions): webpack.Configuratio
         resolve: getBuildResolvers(options),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? getBuildWatcher(options) : undefined,
-    }
-}
+    };
+};

@@ -14,7 +14,7 @@ i18n.use(Backend)
 
         interpolation: {
             escapeValue: false,
-        }
+        },
     });
 
 
