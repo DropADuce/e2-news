@@ -1,9 +1,9 @@
-import React from "react";
-import {useTranslation} from "react-i18next";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default () => {
 
-    const {t} = useTranslation('main');
+    const { t } = useTranslation('main');
 
     return (
         <div>
@@ -11,5 +11,5 @@ export default () => {
                 {t('ЭТО ГЛАВНАЯ СТРАНИЦА')}
             </h1>
         </div>
-    )
-}
+    );
+};

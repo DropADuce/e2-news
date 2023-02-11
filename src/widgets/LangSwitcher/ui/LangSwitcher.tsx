@@ -1,8 +1,8 @@
-import React, {FC} from "react";
-import {useTranslation} from "react-i18next";
+import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import {Button} from "shared/ui/Button";
-import {classNames} from "shared/lib/helpers/classNames";
+import { Button } from 'shared/ui/Button';
+import { classNames } from 'shared/lib/helpers/classNames';
 import classes from './LangSwitcher.module.scss';
 
 interface ILangSwitcherProps {
@@ -10,13 +10,13 @@ interface ILangSwitcherProps {
 }
 
 export const LangSwitcher: FC<ILangSwitcherProps> = ({
-                                                         mix
-                                                     }) => {
-    const {t, i18n} = useTranslation();
+    mix,
+}) => {
+    const { t, i18n } = useTranslation();
 
     const toggleTranslate = async () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-    }
+    };
 
     return (
         <Button
@@ -25,5 +25,5 @@ export const LangSwitcher: FC<ILangSwitcherProps> = ({
         >
             {t('Язык')}
         </Button>
-    )
-}
+    );
+};

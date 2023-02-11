@@ -1,8 +1,8 @@
-import React, {FC} from "react";
+import React, { FC } from 'react';
 
-import {ThemeSwitcher} from "shared/ui/ThemeSwitcher";
-import {Link} from "shared/ui/Link/Link";
-import {classNames} from "shared/lib/helpers/classNames";
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { Link } from 'shared/ui/Link/Link';
+import { classNames } from 'shared/lib/helpers/classNames';
 import classes from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -10,8 +10,8 @@ interface INavbarProps {
 }
 
 export const Navbar: FC<INavbarProps> = ({
-                                             mix
-                                         }) => {
+    mix,
+}) => {
     return (
         <div className={classNames(classes.navbar, {}, [mix])}>
             <div className={classes.links}>
@@ -19,6 +19,6 @@ export const Navbar: FC<INavbarProps> = ({
                 <Link to='/about'>Обо мне</Link>
             </div>
         </div>
-    )
-}
+    );
+};
 

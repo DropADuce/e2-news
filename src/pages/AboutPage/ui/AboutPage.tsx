@@ -1,9 +1,9 @@
-import React from "react";
-import {useTranslation} from "react-i18next";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default () => {
 
-    const {t} = useTranslation('about');
+    const { t } = useTranslation('about');
 
     return (
         <div>
@@ -11,5 +11,5 @@ export default () => {
                 {t('ЭТО СТРАНИЦА ОБО МНЕ')}
             </h1>
         </div>
-    )
-}
+    );
+};

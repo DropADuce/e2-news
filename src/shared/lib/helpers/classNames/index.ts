@@ -6,6 +6,6 @@ export const classNames = (className: string, mods: TMods = {}, additional: Arra
         ...additional.filter(Boolean),
         ...Object.entries(mods)
             .filter(([_, value]) => value)
-            .map(([className]) => className)
+            .map(([className]) => className),
     ].join(' ');
-}
+};
