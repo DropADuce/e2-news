@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { LinkProps } from 'react-router-dom';
 
-import { classNames } from 'shared/lib/helpers/classNames';
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import classes from './Link.module.scss';
 
 export enum LinkTheme {

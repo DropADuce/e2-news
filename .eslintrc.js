@@ -3,6 +3,7 @@ module.exports = {
         'browser': true,
         'es2021': true,
         'node': true,
+        'jest': true,
     },
     'extends': [
         'eslint:recommended',
@@ -33,7 +34,11 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/display-name': 0,
         'i18next/no-literal-string': ['error', {
-            markUpOnly: true
+            markUpOnly: true,
+        }],
+        'max-len': [2, {
+            'code': 120,
+            'ignoreComments': true,
         }],
     },
 };
