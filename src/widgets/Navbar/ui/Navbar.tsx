@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { Link } from 'shared/ui/Link/Link';
-import { classNames } from 'shared/lib/helpers/classNames';
+import { Link } from 'shared/ui/Link';
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import classes from './Navbar.module.scss';
+import { useTranslation } from 'react-i18next';
 
 interface INavbarProps {
     mix?: string,
@@ -12,11 +12,14 @@ interface INavbarProps {
 export const Navbar: FC<INavbarProps> = ({
     mix,
 }) => {
+
+    const { t } = useTranslation();
+
     return (
         <div className={classNames(classes.navbar, {}, [mix])}>
             <div className={classes.links}>
-                <Link to='/'>Главная</Link>
-                <Link to='/about'>Обо мне</Link>
+                <Link to='/'>{t('Главная')}</Link>
+                <Link to='/about'>{t('Обо мне')}</Link>
             </div>
         </div>
     );
