@@ -2,9 +2,9 @@ import React, { FC, useState } from 'react';
 
 import { Button } from 'shared/ui/Button';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import classes from './Sidebar.module.scss';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
+import classes from './Sidebar.module.scss';
 
 interface ISidebarProps {
     mix?: string,
@@ -13,15 +13,19 @@ interface ISidebarProps {
 export const Sidebar: FC<ISidebarProps> = ({
     mix,
 }) => {
-    const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+    const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
     const toggleIsCollapsed = () => setIsCollapsed((prev) => !prev);
 
     return (
         <div
             className={classNames(classes.sidebar, { [classes.collapsed]: isCollapsed }, [mix])}
+            data-testid='sidebar'
         >
-            <Button onClick={toggleIsCollapsed}>
+            <Button
+                onClick={toggleIsCollapsed}
+                data-testid='sidebar-toggle'
+            >
                 toggle
             </Button>
             <div className={classes.switchers}>

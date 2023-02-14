@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
@@ -9,6 +9,10 @@ import 'app/styles/index.scss';
 
 export const App = () => {
     const [theme] = useTheme();
+
+    useEffect(() => {
+        if (Math.random() > 0.5) throw new Error('error');
+    }, []);
 
     return (
         <Suspense fallback=''>

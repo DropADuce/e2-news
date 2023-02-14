@@ -14,3 +14,12 @@
     background: none;
     outline: none;
 }
+
+.primary {
+    padding: var(--default-spacing);
+    margin: 0;
+    border: none;
+    border-radius: var(--default-border-radius);
+    outline: none;
+    background: var(--secondary-bg-color);
+}
