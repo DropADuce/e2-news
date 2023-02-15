@@ -1,5 +1,7 @@
 .button {
     cursor: pointer;
+    border-radius: var(--default-border-radius);
+    padding: var(--default-spacing);
     color: var(--primary-color);
 
     svg {
@@ -8,18 +10,23 @@
 }
 
 .clear {
-    padding: 0;
-    margin: 0;
     border: none;
-    background: none;
+    background-color: inherit;
     outline: none;
 }
 
 .primary {
-    padding: var(--default-spacing);
-    margin: 0;
     border: none;
-    border-radius: var(--default-border-radius);
     outline: none;
     background: var(--secondary-bg-color);
+    box-shadow:
+        0 0 1px rgb(0 0 0 / 10%),
+        0 0 3px rgb(0 0 0 / 5%),
+        0 0 5px rgb(0 0 0 / 2%);
+}
+
+.outline {
+    background-color: transparent;
+    border: 1px solid var(--inverted-bg-color);
+    color: var(--secondary-color);
 }
