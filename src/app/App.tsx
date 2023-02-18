@@ -10,10 +10,6 @@ import 'app/styles/index.scss';
 export const App = () => {
     const [theme] = useTheme();
 
-    useEffect(() => {
-        if (Math.random() > 0.5) throw new Error('error');
-    }, []);
-
     return (
         <Suspense fallback=''>
             <div className={classNames('app', {}, [theme])}>
