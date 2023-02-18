@@ -26,7 +26,7 @@ export const Sidebar: FC<ISidebarProps> = ({
                 onClick={toggleIsCollapsed}
                 data-testid='sidebar-toggle'
             >
-                toggle
+                {/*toggle*/}
             </Button>
             <div className={classes.switchers}>
                 <ThemeSwitcher />
