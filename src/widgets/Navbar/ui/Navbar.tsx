@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { Link } from 'shared/ui/Link';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
 

@@ -2,7 +2,7 @@ import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from 'shared/ui/Button';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './PageError.module.scss';
 import { ThemeButton } from 'shared/ui/Button/ui/Button';
 

@@ -1,6 +1,6 @@
 import React, { Children, FC, useMemo } from 'react';
 
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Icon.module.scss';
 import { Icons } from 'shared/assets/icons';
 

@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useState } from 'react';
 
 import { Button } from 'shared/ui/Button';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
 import classes from './Sidebar.module.scss';
