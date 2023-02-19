@@ -19,7 +19,6 @@ export const Navbar: FC<INavbarProps> = ({
         <div className={classNames(classes.navbar, {}, [mix])}>
             <div className={classes.links}>
                 <Link to='/'>{t('Главная')}</Link>
-                <Link to='/about'>{t('Обо мне')}</Link>
             </div>
         </div>
     );

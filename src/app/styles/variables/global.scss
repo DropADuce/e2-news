@@ -6,11 +6,15 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-size-xl) var(--font-family-main);
 
-    // sizes
+    // defaults
     --default-spacing: 12px;
     --default-border-radius: 12px;
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+    --default-transition: all 300ms ease-in-out;
 }

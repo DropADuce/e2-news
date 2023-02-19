@@ -1,5 +1,9 @@
 .link {
     color: var(--primary-color);
+
+    &:hover:not(&:active) {
+        color: var(--inverted-primary-color);
+    }
 }
 
 .primary {
