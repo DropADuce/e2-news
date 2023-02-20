@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { SquareLoader } from 'shared/ui/SquareLoader';
 import classes from './PageLoader.module.scss';
 

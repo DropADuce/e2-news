@@ -33,6 +33,50 @@ Outline.args = {
     theme: ThemeButton.OUTLINE,
 };
 
+export const OutlineL = Template.bind({});
+OutlineL.args = {
+    children: 'TEST_TEXT',
+    theme: ThemeButton.OUTLINE,
+    size: 'l',
+};
+
+export const OutlineXL = Template.bind({});
+OutlineXL.args = {
+    children: 'TEST_TEXT',
+    theme: ThemeButton.OUTLINE,
+    size: 'xl',
+};
+
+export const Inherit = Template.bind({});
+Inherit.args = {
+    children: 'TEST_TEXT',
+    theme: ThemeButton.INHERIT,
+};
+
+export const SquareM = Template.bind({});
+SquareM.args = {
+    children: '>',
+    theme: ThemeButton.PRIMARY,
+    size: 'm',
+    square: true,
+};
+
+export const SquareL = Template.bind({});
+SquareL.args = {
+    children: '>',
+    theme: ThemeButton.PRIMARY,
+    size: 'l',
+    square: true,
+};
+
+export const SquareXL = Template.bind({});
+SquareXL.args = {
+    children: '>',
+    theme: ThemeButton.PRIMARY,
+    size: 'xl',
+    square: true,
+};
+
 export const Primary_Dark = Template.bind({});
 Primary_Dark.args = {
     children: 'TEST_TEXT',
@@ -53,3 +97,54 @@ Outline_Dark.args = {
     theme: ThemeButton.OUTLINE,
 };
 Outline_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const OutlineL_Dark = Template.bind({});
+OutlineL_Dark.args = {
+    children: 'TEST_TEXT',
+    theme: ThemeButton.OUTLINE,
+    size: 'l',
+};
+OutlineL_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const OutlineXL_Dark = Template.bind({});
+OutlineXL_Dark.args = {
+    children: 'TEST_TEXT',
+    theme: ThemeButton.OUTLINE,
+    size: 'xl',
+};
+OutlineXL_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const Inherit_Dark = Template.bind({});
+Inherit_Dark.args = {
+    children: 'TEST_TEXT',
+    theme: ThemeButton.INHERIT,
+};
+Inherit_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const SquareM_Dark = Template.bind({});
+SquareM_Dark.args = {
+    children: '>',
+    theme: ThemeButton.PRIMARY,
+    size: 'm',
+    square: true,
+};
+SquareM_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const SquareL_Dark = Template.bind({});
+SquareL_Dark.args = {
+    children: '>',
+    theme: ThemeButton.PRIMARY,
+    size: 'l',
+    square: true,
+};
+SquareL_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const SquareXL_Dark = Template.bind({});
+SquareXL_Dark.args = {
+    children: '>',
+    theme: ThemeButton.PRIMARY,
+    size: 'xl',
+    square: true,
+};
+SquareXL_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
