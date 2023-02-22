@@ -1,4 +1,4 @@
-.app.light {
+.app_light_theme {
     --bg-color: #edf6f9;
     --secondary-bg-color: #e3e3ff;
     --inverted-bg-color: #2c2c00;
@@ -7,4 +7,5 @@
     --inverted-primary-color: #dcdcdc;
     --inverted-secondary-color: #acacac;
     --accent-color: #3498db;
+    --overlay-color: rgba(0 0 0 / 60%);
 }

@@ -9,6 +9,7 @@ export const useTheme = (): TUseThemeResult => {
     const toggleTheme = () => {
         const newTheme = theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK;
         setTheme(newTheme);
+        document.body.className = newTheme;
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 

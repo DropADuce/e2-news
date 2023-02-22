@@ -11,10 +11,13 @@
     --font-xl: var(--font-size-xl) / var(--font-size-xl) var(--font-family-main);
 
     // defaults
-    --default-spacing: 12px;
+    --default-spacing: 8px;
     --default-border-radius: 12px;
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
     --default-transition: all 300ms ease-in-out;
+
+    // z-indexes
+    --modal-z-index: 10;
 }
