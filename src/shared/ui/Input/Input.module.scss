@@ -1,0 +1,27 @@
+.inputWrapper {
+    flex-basis: content;
+}
+
+.input {
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid var(--inverted-bg-color);
+    padding: var(--default-spacing);
+    border-radius: var(--default-border-radius);
+    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    transition: border, box-shadow 300ms ease-in;
+
+    &:active,
+    &:focus {
+        border: none;
+        outline: none;
+        box-shadow: inset 0 0 0 2px var(--accent-color);
+    }
+
+    &:hover:not(&:active,&:focus) {
+        border: none;
+        box-shadow: 0 0 0 2px var(--accent-color);
+    }
+}

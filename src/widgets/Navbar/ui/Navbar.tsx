@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
-import { Modal } from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/authByUsername';
 
 interface INavbarProps {
     mix?: string,
@@ -13,26 +13,26 @@ interface INavbarProps {
 export const Navbar: FC<INavbarProps> = ({
     mix,
 }) => {
-    const [isModalopen, setIsOpenModal] = useState<boolean>(false);
+    const [isModalOpen, setIsOpenModal] = useState<boolean>(false);
     const { t } = useTranslation();
 
-    const toggleModalVisible = useCallback(() => setIsOpenModal((prev) => !prev), []);
+    const onModalOpen = useCallback(() => setIsOpenModal(true), []);
+    const onCloseModal = useCallback(() => setIsOpenModal(false), []);
 
     return (
         <div className={classNames(classes.navbar, {}, [mix])}>
             <div className={classes.links}>
                 <Button
                     size='m'
-                    onClick={toggleModalVisible}
+                    onClick={onModalOpen}
                 >
                     {t('Войти')}
                 </Button>
             </div>
-            <Modal
-                isOpen={isModalopen}
-                onClose={toggleModalVisible}
-            >
-            </Modal>
+            <LoginModal
+                isOpen={isModalOpen}
+                onClose={onCloseModal}
+            />
         </div>
     );
 };

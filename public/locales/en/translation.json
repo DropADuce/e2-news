@@ -5,5 +5,7 @@
   "Главная": "Main",
   "Обо мне": "About me",
   "Произошла непредвиденная ошибка": "Something went wrong",
-  "Войти": "Sign in"
+  "Войти": "Sign in",
+  "Введите имя ползователя": "enter username",
+  "Введите пароль": "enter password"
 }
