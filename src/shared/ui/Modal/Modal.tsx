@@ -9,6 +9,7 @@ interface IModalProps {
     isOpen: boolean,
     onClose?: () => void
     children?: ReactNode,
+    lazy?: boolean,
 }
 
 export const Modal: FC<IModalProps> = ({
@@ -16,8 +17,11 @@ export const Modal: FC<IModalProps> = ({
     isOpen = false,
     onClose,
     children,
+    lazy = false,
 }) => {
     const [isClosing, setIsClosing] = useState<boolean>(false);
+    const [isMounted, setIsMounted] = useState<boolean>(false);
+
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const onCloseHandler = useCallback(() => {
@@ -44,12 +48,20 @@ export const Modal: FC<IModalProps> = ({
         };
     }, [isOpen, onKeyDown]);
 
+    useEffect(() => {
+        if (isOpen) setIsMounted(true);
+    }, [isOpen]);
+
     const contentClickHandler = (event: React.MouseEvent) => event.stopPropagation();
 
     const mods = {
-        [classes.opend]: isOpen,
+        [classes.opend]: lazy ? isMounted && isOpen : isOpen,
         [classes.isClosing]: isClosing,
     };
+
+    if (lazy && (!isMounted && !isOpen)) {
+        return null;
+    }
 
     return (
         <Portal>
