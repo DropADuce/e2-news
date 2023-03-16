@@ -21,6 +21,13 @@ Primary.args = {
     theme: ThemeButton.PRIMARY,
 };
 
+export const Primary_Disabled = Template.bind({});
+Primary_Disabled.args = {
+    children: 'TEST_TEST',
+    theme: ThemeButton.PRIMARY,
+    disabled: true,
+};
+
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'TEST_TEXT',
@@ -83,6 +90,14 @@ Primary_Dark.args = {
     theme: ThemeButton.PRIMARY,
 };
 Primary_Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const Primary_Dark_Disabled = Template.bind({});
+Primary_Dark_Disabled.args = {
+    children: 'TEST_TEST',
+    theme: ThemeButton.PRIMARY,
+    disabled: true,
+};
+Primary_Dark_Disabled.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const Clear_Dark = Template.bind({});
 Clear_Dark.args = {
