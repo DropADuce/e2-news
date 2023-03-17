@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, Suspense } from 'react';
 
 import { Modal } from 'shared/ui/Modal/Modal';
-import { LoginForm } from '../LoginForm/LoginForm';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
+import { SquareLoader } from 'shared/ui/SquareLoader';
 
 interface ILoginModalProps {
     isOpen: boolean;
@@ -15,7 +16,9 @@ export const LoginModal: FC<ILoginModalProps> = (props) => {
             lazy
             {...props}
         >
-            <LoginForm />
+            <Suspense fallback={<SquareLoader />}>
+                <LoginFormAsync />
+            </Suspense>
         </Modal>
     );
 };
