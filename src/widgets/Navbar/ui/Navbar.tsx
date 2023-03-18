@@ -47,10 +47,10 @@ export const Navbar: FC<INavbarProps> = ({
                     {buttonTitle}
                 </Button>
             </div>
-            <LoginModal
+            {isModalOpen && <LoginModal
                 isOpen={isModalOpen}
                 onClose={onCloseModal}
-            />
+            />}
         </div>
     );
 };

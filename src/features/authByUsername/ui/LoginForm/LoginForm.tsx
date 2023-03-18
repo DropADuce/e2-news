@@ -1,13 +1,13 @@
 import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { classNames } from 'shared/lib/classNames/classNames';
+
 import classes from './LoginForm.module.scss';
 import { Button } from 'shared/ui/Button';
 import { ThemeButton } from 'shared/ui/Button/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import {
     errorSelector,
     isLoadingSelector,
@@ -16,12 +16,17 @@ import {
 } from '../../model/selectors/authSelectors';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import { Text } from 'shared/ui/Text/Text';
+import { ReducerLoader, TReducersList } from 'shared/lib/components/ReucerLoader/ReducerLoader';
 
-interface ILoginFormProps {
+export interface ILoginFormProps {
     mix?: string,
 }
 
-export const LoginForm = memo(({
+const initialReducers: TReducersList = {
+    loginForm: loginReducer,
+};
+
+export default memo(({
     mix,
 }: ILoginFormProps) => {
     const username = useSelector(usernameSelector);
@@ -46,33 +51,35 @@ export const LoginForm = memo(({
     }, [dispatch, username, password]);
 
     return (
-        <div className={classNames(classes.loginForm, {}, [mix])}>
-            <Text title={t('Форма авторизации')} />
-            {error && <Text
-                text={t('Ошибка! Не верный логин, или пароль')}
-                theme='error'
-            />}
-            <Input
-                autofocus
-                type='text'
-                placeholder={t('Введите имя ползователя')}
-                onChange={onChangeUsername}
-                value={username}
-            />
-            <Input
-                type='password'
-                placeholder={t('Введите пароль')}
-                onChange={onChangePassword}
-                value={password}
-            />
-            <Button
-                theme={ThemeButton.PRIMARY}
-                mix={classes.loginButton}
-                onClick={onLogin}
-                disabled={isLoading}
-            >
-                {t('Войти')}
-            </Button>
-        </div>
+        <ReducerLoader reducers={initialReducers}>
+            <div className={classNames(classes.loginForm, {}, [mix])}>
+                <Text title={t('Форма авторизации')} />
+                {error && <Text
+                    text={t('Ошибка! Не верный логин, или пароль')}
+                    theme='error'
+                />}
+                <Input
+                    autofocus
+                    type='text'
+                    placeholder={t('Введите имя ползователя')}
+                    onChange={onChangeUsername}
+                    value={username}
+                />
+                <Input
+                    type='password'
+                    placeholder={t('Введите пароль')}
+                    onChange={onChangePassword}
+                    value={password}
+                />
+                <Button
+                    theme={ThemeButton.PRIMARY}
+                    mix={classes.loginButton}
+                    onClick={onLogin}
+                    disabled={isLoading}
+                >
+                    {t('Войти')}
+                </Button>
+            </div>
+        </ReducerLoader>
     );
 });
