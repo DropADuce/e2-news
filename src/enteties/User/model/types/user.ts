@@ -1,7 +1,7 @@
 export interface IUser {
     id: string,
-    userName: string,
-    password: string,
+    username: string,
+    password?: string,
 }
 
 export interface IUserSchema {
