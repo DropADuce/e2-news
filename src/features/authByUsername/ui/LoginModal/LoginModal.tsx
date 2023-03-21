@@ -11,13 +11,16 @@ interface ILoginModalProps {
 }
 
 export const LoginModal: FC<ILoginModalProps> = (props) => {
+
+    const { onClose } = props;
+
     return (
         <Modal
             lazy
             {...props}
         >
             <Suspense fallback={<SquareLoader />}>
-                <LoginFormAsync />
+                <LoginFormAsync onSuccess={onClose} />
             </Suspense>
         </Modal>
     );

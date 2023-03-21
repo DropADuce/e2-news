@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "Андрей",
+    "surname": "Лапузин",
+    "age": 28,
+    "currency": "RUB",
+    "country": "Россия",
+    "city": "Екатеринбург",
+    "username": "admin",
+    "avatar": "https://sun9-52.userapi.com/impg/c857636/v857636993/216ea8/nD9pHb4qoH8.jpg?size=2560x1707&quality=96&sign=ce5abdc9b626d9daea4d3381c32167d8&type=album"
+  }
 }

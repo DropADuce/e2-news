@@ -1,26 +1,22 @@
-import React, { FC, useMemo, useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 
 import { Button } from 'shared/ui/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
-import classes from './Sidebar.module.scss';
 import { ThemeButton } from 'shared/ui/Button/ui/Button';
-import { Link } from 'shared/ui/Link';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Icon } from 'shared/ui/Icon/ui/Icon';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { SidebarItems } from '../../model/items';
+import classes from './Sidebar.module.scss';
 
 interface ISidebarProps {
     mix?: string,
 }
 
-export const Sidebar: FC<ISidebarProps> = ({
+export const Sidebar = memo(({
     mix,
-}) => {
+}: ISidebarProps) => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-
-    const { t } = useTranslation();
 
     const toggleIsCollapsed = () => setIsCollapsed((prev) => !prev);
     const buttonContent = useMemo(() => (
@@ -33,22 +29,13 @@ export const Sidebar: FC<ISidebarProps> = ({
             data-testid='sidebar'
         >
             <div className={classes.items}>
-                <Link to={RoutePath.main}>
-                    <Icon
-                        icon='MainPage'
-                        mix={classes.linkWithIcon}
-                    >
-                        <span className={classes.link}>{t('Главная')}</span>
-                    </Icon>
-                </Link>
-                <Link to={RoutePath.about}>
-                    <Icon
-                        icon='AboutPage'
-                        mix={classes.linkWithIcon}
-                    >
-                        <span className={classes.link}>{t('Обо мне')}</span>
-                    </Icon>
-                </Link>
+                {SidebarItems.map((sidebarItem) => (
+                    <SidebarItem
+                        {...sidebarItem}
+                        collapsed={isCollapsed}
+                        key={sidebarItem.path}
+                    />
+                ))}
             </div>
             <div className={classes.switchers}>
                 <ThemeSwitcher/>
@@ -65,4 +52,4 @@ export const Sidebar: FC<ISidebarProps> = ({
             </Button>
         </div>
     );
-};
+});

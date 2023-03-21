@@ -6,7 +6,7 @@ import classes from './LoginForm.module.scss';
 import { Button } from 'shared/ui/Button';
 import { ThemeButton } from 'shared/ui/Button/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import {
     errorSelector,
@@ -17,8 +17,10 @@ import {
 import { loginByUsername } from '../../model/services/loginByUsername';
 import { Text } from 'shared/ui/Text/Text';
 import { ReducerLoader, TReducersList } from 'shared/lib/components/ReucerLoader/ReducerLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface ILoginFormProps {
+    onSuccess: () => void,
     mix?: string,
 }
 
@@ -27,6 +29,7 @@ const initialReducers: TReducersList = {
 };
 
 export default memo(({
+    onSuccess,
     mix,
 }: ILoginFormProps) => {
     const username = useSelector(usernameSelector);
@@ -36,7 +39,7 @@ export default memo(({
 
     const { t } = useTranslation();
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onChangeUsername = useCallback((username: string) => {
         dispatch(loginActions.setUsername(username));
@@ -46,9 +49,14 @@ export default memo(({
         dispatch(loginActions.setPassword(password));
     }, [dispatch]);
 
-    const onLogin = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+    const onLogin = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+
+    }, [dispatch, username, password, onSuccess]);
 
     return (
         <ReducerLoader reducers={initialReducers}>

@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from 'shared/ui/Button';
@@ -10,17 +10,17 @@ interface ILangSwitcherProps {
     short?: boolean
 }
 
-export const LangSwitcher: FC<ILangSwitcherProps> = ({
+export const LangSwitcher = memo(({
     mix,
     short = false,
-}) => {
+}: ILangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggleTranslate = async () => {
         await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     };
 
-    const langswitcherTitle = useMemo(() => (
+    const langSwitcherTitle = useMemo(() => (
         short ? 'Короткий язык' : 'Язык'
     ), [short]);
 
@@ -29,7 +29,7 @@ export const LangSwitcher: FC<ILangSwitcherProps> = ({
             onClick={toggleTranslate}
             mix={classNames(classes.langSwitcher, {}, [mix])}
         >
-            {t(langswitcherTitle)}
+            {t(langSwitcherTitle)}
         </Button>
     );
-};
+});

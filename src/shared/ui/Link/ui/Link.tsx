@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { LinkProps } from 'react-router-dom';
 
@@ -15,13 +15,13 @@ interface ILinkProps extends LinkProps {
     theme?: LinkTheme,
 }
 
-export const Link: FC<ILinkProps> = ({
+export const Link = memo(({
     mix,
     children,
     to,
     theme = LinkTheme.PRIMARY,
     ...props
-}) => {
+}: ILinkProps) => {
     return (
         <ReactRouterLink
             to={to}
@@ -31,4 +31,4 @@ export const Link: FC<ILinkProps> = ({
             {children}
         </ReactRouterLink>
     );
-};
+});
