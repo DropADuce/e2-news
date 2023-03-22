@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Navbar.module.scss';
@@ -12,18 +12,14 @@ interface INavbarProps {
     mix?: string,
 }
 
-export const Navbar: FC<INavbarProps> = ({
+export const Navbar = memo(({
     mix,
-}) => {
+}: INavbarProps) => {
     const [isModalOpen, setIsOpenModal] = useState<boolean>(false);
     const { t } = useTranslation();
     const dispatch = useDispatch();
 
     const authData = useSelector(userAuthDataSelector);
-
-    useEffect(() => {
-        if (authData) setIsOpenModal(false);
-    }, [authData]);
 
     const onModalOpen = useCallback(() => setIsOpenModal(true), []);
     const onCloseModal = useCallback(() => setIsOpenModal(false), []);
@@ -53,5 +49,5 @@ export const Navbar: FC<INavbarProps> = ({
             />}
         </div>
     );
-};
+});
 

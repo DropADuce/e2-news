@@ -1,0 +1,25 @@
+.linkWithIcon {
+    color: var(--secondary-color);
+    fill: var(--secondary-color);
+
+    &:hover:not(&:active) {
+        color: var(--inverted-secondary-color);
+        fill: var(--inverted-secondary-color);
+    }
+}
+
+.link {
+    white-space: nowrap;
+}
+
+.collapsed {
+    .link {
+        opacity: 0;
+        width: 0;
+
+        &:hover:not(&:active) {
+            color: var(--inverted-secondary-color);
+            fill: var(--inverted-secondary-color);
+        }
+    }
+}

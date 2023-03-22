@@ -12,16 +12,6 @@
     }
 }
 
-.linkWithIcon {
-    color: var(--secondary-color);
-    fill: var(--secondary-color);
-
-    &:hover:not(&:active) {
-        color: var(--inverted-secondary-color);
-        fill: var(--inverted-secondary-color);
-    }
-}
-
 .switchers {
     position: absolute;
     bottom: var(--default-spacing);
@@ -29,10 +19,6 @@
     justify-content: center;
     width: 100%;
     gap: var(--default-spacing);
-}
-
-.link {
-    white-space: nowrap;
 }
 
 .items {
@@ -56,15 +42,5 @@
 
     .items {
         align-items: center;
-    }
-
-    .link {
-        opacity: 0;
-        width: 0;
-
-        &:hover:not(&:active) {
-            color: var(--inverted-secondary-color);
-            fill: var(--inverted-secondary-color);
-        }
     }
 }

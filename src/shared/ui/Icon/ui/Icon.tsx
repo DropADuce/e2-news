@@ -2,10 +2,10 @@ import React, { Children, FC, useMemo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Icon.module.scss';
-import { Icons } from 'shared/assets/icons';
+import { EnumIcons, Icons } from 'shared/constants/Icons';
 
 interface IIconProps {
-    icon: keyof typeof Icons
+    icon: EnumIcons
     mix?: string,
 }
 
