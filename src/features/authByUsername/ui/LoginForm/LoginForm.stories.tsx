@@ -6,6 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { THEMES } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { loginReducer } from '../../model/slice/loginSlice';
+import { TReducersList } from 'shared/lib/components/ReucerLoader/ReducerLoader';
 
 export default {
     title: 'features/LoginForm',
@@ -14,7 +15,7 @@ export default {
 
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
-const reducersMap = {
+const reducersMap: TReducersList = {
     loginForm: loginReducer,
 };
 
@@ -24,6 +25,7 @@ Primary.decorators = [StoreDecorator({
     loginForm: {
         username: 'admin',
         password: '123',
+        isLoading: false,
     },
 }, reducersMap)];
 
@@ -43,6 +45,7 @@ Primary_Dark.decorators = [ThemeDecorator(THEMES.DARK), StoreDecorator({
     loginForm: {
         username: 'admin',
         password: '123',
+        isLoading: false,
     },
 }, reducersMap)];
 

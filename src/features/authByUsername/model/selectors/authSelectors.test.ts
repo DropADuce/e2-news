@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'app/providers/StoreProvider';
 import { errorSelector, isLoadingSelector, passwordSelector, usernameSelector } from './authSelectors';
 
