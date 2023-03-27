@@ -94,6 +94,7 @@
     "react-router-dom": "^6.8.0"
   },
   "loki": {
+    "fetchFailIgnore": ".*",
     "chromeSelector": "body",
     "configurations": {
       "chrome.laptop": {
