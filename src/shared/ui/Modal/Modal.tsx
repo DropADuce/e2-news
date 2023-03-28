@@ -22,7 +22,7 @@ export const Modal: FC<IModalProps> = ({
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const [isMounted, setIsMounted] = useState<boolean>(false);
 
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const onCloseHandler = useCallback(() => {
         if (onClose) {
@@ -43,7 +43,7 @@ export const Modal: FC<IModalProps> = ({
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
-            clearTimeout(timerRef.current);
+            if (timerRef.current) clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);

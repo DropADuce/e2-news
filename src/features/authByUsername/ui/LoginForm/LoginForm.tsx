@@ -50,7 +50,10 @@ export default memo(({
     }, [dispatch]);
 
     const onLogin = useCallback(async () => {
-        const result = await dispatch(loginByUsername({ username, password }));
+        const result = await dispatch(loginByUsername({
+            username,
+            password,
+        }));
 
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();

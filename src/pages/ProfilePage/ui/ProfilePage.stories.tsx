@@ -5,6 +5,12 @@ import ProfilePage from './ProfilePage';
 import { ThemeDecorator } from '../../../shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEMES } from '../../../app/providers/ThemeProvider/inedx';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { profileReducer } from 'enteties/Profile';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+
+const reducersMap = {
+    profile: profileReducer,
+};
 
 export default {
     title: 'pages/ProfilePage',
@@ -23,7 +29,7 @@ Light.decorators = [StoreDecorator({
         isReadonly: true,
         isLoading: false,
     },
-})];
+}, reducersMap), RouterDecorator];
 
 export const Dark = Template.bind({});
 Dark.args = {};
@@ -32,4 +38,4 @@ Dark.decorators = [StoreDecorator({
         isReadonly: true,
         isLoading: false,
     },
-}), ThemeDecorator(THEMES.DARK)];
+}, reducersMap), ThemeDecorator(THEMES.DARK), RouterDecorator];

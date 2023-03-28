@@ -1,6 +1,6 @@
 type TMods = Record<string, boolean | string>;
 
-export const classNames = (className: string, mods: TMods = {}, additional: Array<string> = []): string => {
+export const classNames = (className: string, mods: TMods = {}, additional: Array<string | undefined> = []): string => {
     return [
         className,
         ...additional.filter(Boolean),
