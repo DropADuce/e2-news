@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "name": "Андрей",
+    "name": "Андрей Владимирович",
     "surname": "Лапузин",
-    "age": 28,
+    "age": "28",
     "currency": "RUB",
-    "country": "Россия",
+    "country": "Russia",
     "city": "Екатеринбург",
     "username": "admin",
-    "avatar": "https://sun9-52.userapi.com/impg/c857636/v857636993/216ea8/nD9pHb4qoH8.jpg?size=2560x1707&quality=96&sign=ce5abdc9b626d9daea4d3381c32167d8&type=album"
+    "avatar": "https://i.pinimg.com/originals/48/c4/bf/48c4bf1f29bf69ab6495a5896c1a6058.jpg"
   }
 }

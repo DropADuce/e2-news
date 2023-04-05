@@ -5,6 +5,7 @@ import { Sidebar } from './Sidebar';
 import { ThemeDecorator } from '../../../../shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEMES } from '../../../../app/providers/ThemeProvider/lib/ThemeContext';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'widgets/Sidebar',
@@ -18,8 +19,20 @@ const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />
 
 export const Light = Template.bind({});
 Light.args = {};
-Light.decorators = [RouterDecorator];
+Light.decorators = [StoreDecorator({
+    user: {
+        authData: {
+            username: 'admin',
+        },
+    },
+}), RouterDecorator];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [RouterDecorator, ThemeDecorator(THEMES.DARK)];
+Dark.decorators = [ThemeDecorator(THEMES.DARK), StoreDecorator({
+    user: {
+        authData: {
+            username: 'admin',
+        },
+    },
+}), RouterDecorator];

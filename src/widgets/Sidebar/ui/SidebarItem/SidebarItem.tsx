@@ -6,6 +6,8 @@ import { Icon } from 'shared/ui/Icon/ui/Icon';
 import { Link } from 'shared/ui/Link';
 import classes from './SidebarItem.module.scss';
 import { ISidebarItem } from '../../model/items';
+import { useSelector } from 'react-redux';
+import { userAuthDataSelector } from 'entities/User';
 
 interface ISidebarItemProps extends ISidebarItem {
     collapsed: boolean,
@@ -16,8 +18,13 @@ export const SidebarItem = memo(({
     text,
     icon,
     collapsed,
+    isAuthOnly,
 }: ISidebarItemProps) => {
+    const AuthData = useSelector(userAuthDataSelector);
     const { t } = useTranslation();
+
+    if (isAuthOnly && !AuthData) return null;
+
     return (
         <Link to={path}>
             <Icon

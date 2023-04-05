@@ -22,6 +22,6 @@ body {
 
     &__page-wrapper {
         flex-grow: 1;
-        padding: var(--default-spacing);
+        padding: calc(var(--default-spacing) * 4);
     }
 }

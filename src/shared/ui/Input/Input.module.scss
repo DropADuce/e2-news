@@ -5,13 +5,27 @@
 .input {
     box-sizing: border-box;
     outline: none;
-    border: 1px solid var(--inverted-bg-color);
     padding: var(--default-spacing);
     border-radius: var(--default-border-radius);
+    border: none;
     width: 100%;
     background-color: var(--bg-color);
     color: var(--primary-color);
-    transition: border, box-shadow 300ms ease-in;
+    transition: box-shadow 200ms ease-in;
+
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+        appearance: none;
+    }
+
+    &[type="number"] {
+        appearance: textfield;
+
+        &:hover,
+        &:focus {
+            appearance: none;
+        }
+    }
 
     &:active,
     &:focus {
@@ -24,4 +38,15 @@
         border: none;
         box-shadow: 0 0 0 2px var(--accent-color);
     }
+}
+
+.readonly {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.fullWidth {
+    width: 100%;
 }

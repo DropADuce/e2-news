@@ -5,7 +5,7 @@ import ProfilePage from './ProfilePage';
 import { ThemeDecorator } from '../../../shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEMES } from '../../../app/providers/ThemeProvider/inedx';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { profileReducer } from 'enteties/Profile';
+import { profileReducer } from 'entities/Profile';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const reducersMap = {
