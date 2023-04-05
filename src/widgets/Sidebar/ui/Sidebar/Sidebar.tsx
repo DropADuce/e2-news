@@ -28,7 +28,7 @@ export const Sidebar = memo(({
             className={classNames(classes.sidebar, { [classes.collapsed]: isCollapsed }, [mix])}
             data-testid='sidebar'
         >
-            <div className={classes.items}>
+            <div className={classes.items} >
                 {SidebarItems.map((sidebarItem) => (
                     <SidebarItem
                         {...sidebarItem}

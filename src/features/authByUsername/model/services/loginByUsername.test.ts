@@ -1,5 +1,5 @@
 import { loginByUsername } from './loginByUsername';
-import { userActions } from 'enteties/User';
+import { userActions } from 'entities/User';
 import { mockedAxios, testAsyncThunk } from 'shared/lib/testAsyncThunk/testAsyncThunk';
 
 describe('loginByUsername',  () => {

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'features/authByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { userActions, userAuthDataSelector } from 'enteties/User';
+import { userActions, userAuthDataSelector } from 'entities/User';
 
 interface INavbarProps {
     mix?: string,
