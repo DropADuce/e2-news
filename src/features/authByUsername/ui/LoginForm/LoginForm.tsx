@@ -1,4 +1,6 @@
-import React, { memo, useCallback } from 'react';
+import React, {
+    memo, useCallback, 
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -7,7 +9,9 @@ import { Button } from 'shared/ui/Button';
 import { ThemeButton } from 'shared/ui/Button/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import {
+    loginActions, loginReducer, 
+} from '../../model/slice/loginSlice';
 import {
     errorSelector,
     isLoadingSelector,
@@ -16,7 +20,9 @@ import {
 } from '../../model/selectors/authSelectors';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import { Text } from 'shared/ui/Text/Text';
-import { ReducerLoader, TReducersList } from 'shared/lib/components/ReucerLoader/ReducerLoader';
+import {
+    ReducerLoader, TReducersList, 
+} from 'shared/lib/components/ReucerLoader/ReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface ILoginFormProps {

@@ -1,4 +1,6 @@
-import React, { CSSProperties, memo, useMemo } from 'react';
+import React, {
+    CSSProperties, memo, useMemo, 
+} from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Avatar.module.scss';

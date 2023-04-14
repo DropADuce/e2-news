@@ -1,4 +1,6 @@
-import React, { memo, useMemo, useState } from 'react';
+import React, {
+    memo, useMemo, useState, 
+} from 'react';
 
 import { Button } from 'shared/ui/Button';
 import { classNames } from 'shared/lib/classNames/classNames';

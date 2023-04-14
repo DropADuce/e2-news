@@ -1,4 +1,6 @@
-import React, { FC, memo } from 'react';
+import React, {
+    FC, memo, 
+} from 'react';
 
 import { useTheme } from 'app/providers/ThemeProvider/inedx';
 import { Button } from 'shared/ui/Button';

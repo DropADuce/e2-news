@@ -13,7 +13,7 @@ interface IProfileCardProps {
     mix?: string,
     data?: IProfile,
     isLoading: boolean,
-    error?: string
+    error?: boolean
     isReadonly: boolean,
     updateField: (value: string, name?: string) => void,
 }
@@ -21,7 +21,7 @@ interface IProfileCardProps {
 export const ProfileCard: FC<IProfileCardProps> = ({
     data,
     mix,
-    error,
+    error = false,
     isReadonly,
     updateField,
     isLoading = false,
@@ -31,7 +31,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
 
     const mods = {
         [classes.loading]: isLoading,
-        [classes.error]: !!error,
+        [classes.error]: error,
     };
 
     const renderProfileData = () => {

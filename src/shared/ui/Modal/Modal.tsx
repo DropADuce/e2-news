@@ -1,4 +1,6 @@
-import React, { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+    FC, ReactNode, useCallback, useEffect, useRef, useState, 
+} from 'react';
 
 import classes from './Modal.module.scss';
 import { classNames } from '../../lib/classNames/classNames';

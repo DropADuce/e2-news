@@ -1,10 +1,16 @@
-import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+    CombinedState, configureStore, Reducer, ReducersMapObject, 
+} from '@reduxjs/toolkit';
 
 import { createReducerManager } from '../config/reducerManager';
 import { userReducer } from 'entities/User';
-import { IStateSchema, IThunkExtraArgs } from './State.schema';
+import {
+    IStateSchema, IThunkExtraArgs, 
+} from './State.schema';
 import { API_CONTROLLER } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
+import {
+    NavigateOptions, To, 
+} from 'react-router-dom';
 
 export const createReduxStore = (
     initialState?: IStateSchema,

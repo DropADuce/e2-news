@@ -1,5 +1,7 @@
 import { IStateSchema } from 'app/providers/StoreProvider';
-import { errorSelector, isLoadingSelector, passwordSelector, usernameSelector } from './authSelectors';
+import {
+    errorSelector, isLoadingSelector, passwordSelector, usernameSelector, 
+} from './authSelectors';
 
 describe('getErrorSelector', () => {
     test('should return error', () => {

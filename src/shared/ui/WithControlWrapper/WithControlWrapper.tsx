@@ -1,4 +1,6 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, {
+    FC, PropsWithChildren, 
+} from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './WithControlWrapper.module.scss';

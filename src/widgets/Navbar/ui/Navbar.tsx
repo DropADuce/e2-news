@@ -1,12 +1,18 @@
-import React, { memo, useCallback, useMemo, useState } from 'react';
+import React, {
+    memo, useCallback, useMemo, useState, 
+} from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'features/authByUsername';
-import { useDispatch, useSelector } from 'react-redux';
-import { userActions, userAuthDataSelector } from 'entities/User';
+import {
+    useDispatch, useSelector, 
+} from 'react-redux';
+import {
+    userActions, userAuthDataSelector, 
+} from 'entities/User';
 
 interface INavbarProps {
     mix?: string,

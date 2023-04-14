@@ -1,7 +1,11 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, {
+    FC, memo, useCallback, 
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { Currency } from '../model/types/currency';
-import { IOption, Select } from 'shared/ui/Select/Select';
+import {
+    IOption, Select, 
+} from 'shared/ui/Select/Select';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { TControlWrapperThemes } from 'shared/ui/WithControlWrapper/WithControlWrapper';
 

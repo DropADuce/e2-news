@@ -1,5 +1,7 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+    ComponentMeta, ComponentStory, 
+} from '@storybook/react';
 
 import { Input as BaseInput } from './Input';
 import { ThemeDecorator } from '../../config/storybook/ThemeDecorator/ThemeDecorator';

@@ -1,5 +1,7 @@
 import { Story } from '@storybook/react';
-import { IStateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import {
+    IStateSchema, StoreProvider, 
+} from 'app/providers/StoreProvider';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 
 type TAsyncReducers = DeepPartial<ReducersMapObject<IStateSchema>>

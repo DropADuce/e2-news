@@ -1,7 +1,11 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+    ComponentMeta, ComponentStory, 
+} from '@storybook/react';
 
-import { Link, LinkTheme } from './Link';
+import {
+    Link, LinkTheme, 
+} from './Link';
 import { ThemeDecorator } from '../../../config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../../config/storybook/RouterDecorator/RouterDecorator';
 import { THEMES } from '../../../../app/providers/ThemeProvider/lib/ThemeContext';

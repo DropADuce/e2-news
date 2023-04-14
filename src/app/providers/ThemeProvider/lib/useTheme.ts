@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 
-import { LOCAL_STORAGE_THEME_KEY, ThemeContext, THEMES } from '../lib/ThemeContext';
+import {
+    LOCAL_STORAGE_THEME_KEY, ThemeContext, THEMES, 
+} from '../lib/ThemeContext';
 
 type TUseThemeResult = [THEMES, () => void]
 

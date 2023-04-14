@@ -5,7 +5,12 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import { IBuildOptions } from './types/config';
 
-export const getBuildPlugins = ({ paths, isDev, apiUrl }: IBuildOptions): Array<webpack.WebpackPluginInstance> => {
+export const getBuildPlugins = ({
+    paths,
+    isDev,
+    apiUrl,
+    project,
+}: IBuildOptions): Array<webpack.WebpackPluginInstance> => {
 
     const plugins = [
         new HtmlWebpackPlugin({
@@ -15,6 +20,7 @@ export const getBuildPlugins = ({ paths, isDev, apiUrl }: IBuildOptions): Array<
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project),
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
