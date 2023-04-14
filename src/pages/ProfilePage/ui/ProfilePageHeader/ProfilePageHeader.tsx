@@ -1,4 +1,6 @@
-import React, { memo, useCallback } from 'react';
+import React, {
+    memo, useCallback, 
+} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -7,7 +9,9 @@ import { Text } from 'shared/ui/Text/Text';
 import { Button } from 'shared/ui/Button';
 import { ThemeButton } from 'shared/ui/Button/ui/Button';
 import { useSelector } from 'react-redux';
-import { isReadonlyProfileSelector, profileActions, updateProfileData } from 'entities/Profile';
+import {
+    isReadonlyProfileSelector, profileActions, updateProfileData, 
+} from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface IProfilePageHeaderProps {

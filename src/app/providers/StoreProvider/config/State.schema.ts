@@ -1,9 +1,13 @@
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/authByUsername';
-import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, 
+} from '@reduxjs/toolkit';
 import { IProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
+import {
+    NavigateOptions, To, 
+} from 'react-router-dom';
 
 export interface IStateSchema {
     user: IUserSchema,

@@ -1,7 +1,11 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+    ComponentMeta, ComponentStory, 
+} from '@storybook/react';
 
-import { Button, ThemeButton } from './Button';
+import {
+    Button, ThemeButton, 
+} from './Button';
 import { ThemeDecorator } from '../../../config/storybook/ThemeDecorator/ThemeDecorator';
 import { THEMES } from '../../../../app/providers/ThemeProvider/lib/ThemeContext';
 

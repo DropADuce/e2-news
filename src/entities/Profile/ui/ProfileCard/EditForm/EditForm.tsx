@@ -1,11 +1,17 @@
-import React, { FC, memo } from 'react';
+import React, {
+    FC, memo, 
+} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IProfile } from 'entities/Profile';
 import { Input } from 'shared/ui/Input/Input';
 import { PROFILE_CARD_FIELDS } from 'entities/Profile/model/constants/constants';
-import { Currency, CurrencySelect } from 'entities/Currency';
-import { Country, CountrySelect } from 'entities/Country';
+import {
+    Currency, CurrencySelect, 
+} from 'entities/Currency';
+import {
+    Country, CountrySelect, 
+} from 'entities/Country';
 
 interface IEditFormProps {
     data?: IProfile,

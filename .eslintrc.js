@@ -31,7 +31,14 @@ module.exports = {
         'semi': ['error', 'always'],
         'react/jsx-indent': [2, 4],
         'object-curly-spacing': [2, 'always'],
-        'object-property-newline': 'error',
+        'object-curly-newline': ['error', {
+            'ImportDeclaration': {
+                'multiline': true, 'minProperties': 2,
+            },
+            'ExportDeclaration': {
+                'multiline': true, 'minProperties': 2,
+            },
+        }],
         'comma-dangle': [2, 'always-multiline'],
         'react/react-in-jsx-scope': 'off',
         'react/display-name': 0,
@@ -45,13 +52,12 @@ module.exports = {
         }],
         'react-hooks/rules-of-hooks': 2,
         'react-hooks/exhaustive-deps': 1,
-        'react/jsx-max-props-per-line': [1, {
-            'maximum': 1,
-        }],
+        'react/jsx-max-props-per-line': [1, { 'maximum': 1 }],
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
+        __PROJECT__: true,
     },
     overrides: [{
         files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

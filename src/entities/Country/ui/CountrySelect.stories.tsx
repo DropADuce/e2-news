@@ -1,5 +1,7 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+    ComponentMeta, ComponentStory, 
+} from '@storybook/react';
 
 import { CountrySelect as Select } from './CountrySelect';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';

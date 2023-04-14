@@ -1,4 +1,6 @@
-import { TOptionalReadonlyProfileFields, TProfileCardFields } from '../types/profileCard';
+import {
+    TOptionalReadonlyProfileFields, TProfileCardFields,
+} from '../types/profileCard';
 
 export const PROFILE_CARD_FIELDS: TProfileCardFields = [
     {
@@ -45,5 +47,4 @@ export const OPTIONAL_READONLY_PROFILE_FIELDS: TOptionalReadonlyProfileFields = 
     city: 'Город',
     currency: 'Валюта',
     country: 'Страна',
-
 };

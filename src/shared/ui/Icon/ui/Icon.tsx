@@ -1,8 +1,12 @@
-import React, { Children, FC, useMemo } from 'react';
+import React, {
+    Children, FC, useMemo, 
+} from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Icon.module.scss';
-import { EnumIcons, Icons } from 'shared/constants/Icons';
+import {
+    EnumIcons, Icons, 
+} from 'shared/constants/Icons';
 
 interface IIconProps {
     icon: EnumIcons

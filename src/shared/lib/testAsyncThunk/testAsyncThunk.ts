@@ -7,9 +7,12 @@ type TActionCreator<Return, Arg, Rejected> = (arg: Arg) => AsyncThunkAction<Retu
 jest.mock('axios');
 export const mockedAxios = jest.mocked(axios);
 
-export const testAsyncThunk = <Return, Arg, Rejected>(actionCreator: TActionCreator<Return, Arg, Rejected>) => {
+export const testAsyncThunk = <Return, Arg, Rejected>(
+    actionCreator: TActionCreator<Return, Arg, Rejected>,
+    state: DeepPartial<IStateSchema> = {},
+) => {
     const dispatch = jest.fn();
-    const getState: () => IStateSchema = jest.fn();
+    const getState: () => IStateSchema = jest.fn(() => state as IStateSchema);
 
     const navigate = jest.fn();
 

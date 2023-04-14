@@ -1,4 +1,6 @@
-import React, { FC, memo } from 'react';
+import React, {
+    FC, memo, 
+} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IProfile } from '../../../model/types/profile';

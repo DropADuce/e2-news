@@ -1,5 +1,7 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+    ComponentMeta, ComponentStory,
+} from '@storybook/react';
 
 import { Sidebar } from './Sidebar';
 import { ThemeDecorator } from '../../../../shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -27,6 +29,14 @@ Light.decorators = [StoreDecorator({
     },
 }), RouterDecorator];
 
+export const Light_NoAuth = Template.bind({});
+Light_NoAuth.args = {};
+Light_NoAuth.decorators = [StoreDecorator({
+    user: {
+        authData: undefined,
+    },
+}), RouterDecorator];
+
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(THEMES.DARK), StoreDecorator({
@@ -34,5 +44,13 @@ Dark.decorators = [ThemeDecorator(THEMES.DARK), StoreDecorator({
         authData: {
             username: 'admin',
         },
+    },
+}), RouterDecorator];
+
+export const Dark_NoAuth = Template.bind({});
+Dark_NoAuth.args = {};
+Dark_NoAuth.decorators = [ThemeDecorator(THEMES.DARK), StoreDecorator({
+    user: {
+        authData: undefined,
     },
 }), RouterDecorator];

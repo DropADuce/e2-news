@@ -1,4 +1,6 @@
-import { FC, lazy } from 'react';
+import {
+    FC, lazy, 
+} from 'react';
 
 import { ILoginFormProps } from './LoginForm';
 

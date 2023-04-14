@@ -1,7 +1,9 @@
 import path from 'path';
 
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
-import { IBuildEnv, IBuildPaths } from './config/build/types/config';
+import {
+    IBuildEnv, IBuildPaths, 
+} from './config/build/types/config';
 
 export default ({ mode: buildMode, port, apiUrl }: IBuildEnv) => {
     const mode = buildMode || 'development';
@@ -22,5 +24,6 @@ export default ({ mode: buildMode, port, apiUrl }: IBuildEnv) => {
         isDev,
         port: PORT,
         apiUrl: baseUrl,
+        project: 'frontend',
     });
 };
