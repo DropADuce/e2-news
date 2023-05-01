@@ -1,15 +1,21 @@
 import React, {
-    Suspense, useEffect, 
+    Suspense, useEffect,
 } from 'react';
-import { useDispatch } from 'react-redux';
+import {
+    useDispatch, useSelector,
+} from 'react-redux';
 
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { userActions } from 'entities/User';
+import {
+    isUserDataReadySelector,
+    userActions,
+} from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 export const App = () => {
+    const isUserReady = useSelector(isUserDataReadySelector);
 
     const dispatch = useDispatch();
 
@@ -23,7 +29,7 @@ export const App = () => {
                 <Navbar/>
                 <div className='app__content'>
                     <Sidebar />
-                    <AppRouter/>
+                    {isUserReady && <AppRouter/>}
                 </div>
             </div>
         </Suspense>
