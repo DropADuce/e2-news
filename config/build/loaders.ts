@@ -3,9 +3,11 @@ import webpack from 'webpack';
 import { buildCssLoaders } from './loaders/buildCssLoaders';
 import { IBuildOptions } from './types/config';
 import { buildSvgLoader } from './loaders/buildSvgLoader';
+import { buildBabelLoader } from './loaders/buildBabaelLoader';
 
 export const getBuildLoaders = ({ isDev }: IBuildOptions): Array<webpack.RuleSetRule> => {
     const cssLoaders = buildCssLoaders(isDev);
+    const babelLoader = buildBabelLoader(isDev);
 
     const assetsLoaders = [
         {
@@ -19,26 +21,6 @@ export const getBuildLoaders = ({ isDev }: IBuildOptions): Array<webpack.RuleSet
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-    };
-
-    const babelLoader = {
-        test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
-                ],
-            },
-        },
     };
 
     return [

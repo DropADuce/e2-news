@@ -1,5 +1,5 @@
 import React, {
-    memo, useCallback, useMemo, useState, 
+    memo, useCallback, useMemo, useState,
 } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -8,10 +8,10 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'features/authByUsername';
 import {
-    useDispatch, useSelector, 
+    useDispatch, useSelector,
 } from 'react-redux';
 import {
-    userActions, userAuthDataSelector, 
+    userActions, userAuthDataSelector,
 } from 'entities/User';
 
 interface INavbarProps {

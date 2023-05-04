@@ -5,5 +5,6 @@ export interface IUser {
 }
 
 export interface IUserSchema {
+    isReady: boolean;
     authData?: IUser,
 }

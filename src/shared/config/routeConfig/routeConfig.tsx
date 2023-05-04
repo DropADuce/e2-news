@@ -5,7 +5,7 @@ import { AboutPage } from 'pages/AboutPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 
-type AppRouteProps = RouteProps & {
+export type TAppRoute = RouteProps & {
     authOnly?: boolean
 }
 
@@ -23,7 +23,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.NOT_FOUND]: '*',
 };
 
-export const routeConfig: Array<AppRouteProps> = [
+export const routeConfig: Array<TAppRoute> = [
     {
         path: RoutePath.main,
         element: <MainPage />,
