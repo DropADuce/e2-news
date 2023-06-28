@@ -1,10 +1,8 @@
 .title {
-    font: var(--font-l);
     color: var(--primary-color);
 }
 
 .text {
-    font: var(--font-line-m);
     color: var(--secondary-color);
 }
 
@@ -27,5 +25,25 @@
 
     .text {
         color: var(--error-color);
+    }
+}
+
+.m {
+    .title {
+        font: var(--font-l);
+    }
+
+    .text {
+        font: var(--font-m);
+    }
+}
+
+.l {
+    .title {
+        font: var(--font-xl);
+    }
+
+    .text {
+        font: var(--font-l);
     }
 }

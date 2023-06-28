@@ -1,0 +1,10 @@
+.articleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.articleMeta {
+    display: flex;
+    justify-content: space-between;
+}

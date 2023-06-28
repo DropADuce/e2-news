@@ -11,5 +11,6 @@
   "Введите пароль": "enter password",
   "Форма авторизации": "Login form",
   "Ошибка! Не верный логин, или пароль": "Error! Wrong login or password",
+  "Комментарии отсутствуют": "No comments yet...",
   "Выйти": "logout"
 }

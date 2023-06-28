@@ -1,19 +1,24 @@
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/authByUsername';
 import {
-    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, 
+    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { IProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import {
-    NavigateOptions, To, 
+    NavigateOptions,
+    To,
 } from 'react-router-dom';
+import { IArticleDetailsSchema } from 'entities/Article';
+import { IArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 
 export interface IStateSchema {
     user: IUserSchema,
     // Async reducers
     loginForm?: ILoginSchema,
     profile?: IProfileSchema,
+    articleDetails?: IArticleDetailsSchema,
+    articleDetailsComments?: IArticleDetailsCommentsSchema,
 }
 
 export type TReducers = keyof IStateSchema

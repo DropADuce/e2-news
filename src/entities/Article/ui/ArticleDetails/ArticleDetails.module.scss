@@ -1,0 +1,15 @@
+.articleDetails {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

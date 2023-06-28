@@ -4,6 +4,7 @@
     background-color: var(--secondary-bg-color);
     position: relative;
     transition: var(--default-transition);
+    flex-shrink: 0;
 
     &CollapseButton {
         position: absolute;
