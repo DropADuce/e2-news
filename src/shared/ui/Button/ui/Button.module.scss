@@ -7,6 +7,10 @@
 
     svg {
         fill: var(--primary-color);
+
+        &:hover:not(&:active) {
+            fill: var(--inverted-primary-color);
+        }
     }
 
     &:disabled {

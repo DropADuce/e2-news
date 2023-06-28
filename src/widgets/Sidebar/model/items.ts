@@ -20,6 +20,12 @@ export const SidebarItems: Array<ISidebarItem> = [
         text: 'Главная',
     },
     {
+        path: RoutePath.articles,
+        icon: EnumIcons.ARTICLE,
+        isAuthOnly: true,
+        text: 'Статьи',
+    },
+    {
         path: RoutePath.about,
         icon: EnumIcons.ABOUT_PAGE,
         text: 'О проекте',

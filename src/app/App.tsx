@@ -27,8 +27,10 @@ export const App = () => {
         <Suspense fallback=''>
             <div className={classNames('app', {}, [])}>
                 <Navbar/>
+
                 <div className='app__content'>
                     <Sidebar />
+
                     {isUserReady && <AppRouter/>}
                 </div>
             </div>

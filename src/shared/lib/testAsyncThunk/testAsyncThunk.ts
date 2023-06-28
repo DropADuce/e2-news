@@ -18,6 +18,7 @@ export const testAsyncThunk = <Return, Arg, Rejected>(
 
     const thunk = async (arg: Arg) => {
         const action = actionCreator(arg);
+
         return action(dispatch, getState, {
             api: mockedAxios,
             navigate,

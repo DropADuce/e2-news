@@ -14,15 +14,37 @@
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "text": "Какая хорошая статья",
+      "articleId": 1,
+      "userId": 2
+    },
+    {
+      "id": 2,
+      "text": "УУУУУУУУУууууууууууу",
+      "articleId": 1,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "text": "Я Бээээээээтмеееееееен",
+      "articleId": 1,
+      "userId": 2
     }
   ],
   "users": [
     {
       "id": 1,
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://i.pinimg.com/originals/48/c4/bf/48c4bf1f29bf69ab6495a5896c1a6058.jpg"
+    },
+    {
+      "id": 2,
+      "username": "Batman",
+      "password": "batman",
+      "role": "USER",
+      "avatar": "https://i.pinimg.com/originals/48/c4/bf/48c4bf1f29bf69ab6495a5896c1a6058.jpg"
     }
   ],
   "profile": {
@@ -34,5 +56,50 @@
     "city": "Екатеринбург",
     "username": "admin",
     "avatar": "https://i.pinimg.com/originals/48/c4/bf/48c4bf1f29bf69ab6495a5896c1a6058.jpg"
-  }
+  },
+  "articles": [
+    {
+      "id": "1",
+      "title": "Breaking NEWS",
+      "subtitle": "Тестовая новость",
+      "img": "https://as2.ftcdn.net/v2/jpg/03/88/26/77/1000_F_388267776_xuhQxwv0lNonSAk7MFeW63FoMTDaabQN.jpg",
+      "views": 42,
+      "createdAt": "12.05.2023",
+      "type": ["IT", "SCIENCE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "В этой статье хотелось бы обсудить несколько привычек, которые есть у нас всех и которые, возможно, пора переосмыслить",
+            "Начнем с кастомных хуков, которым надо вернуть результат, в частности пару значений. Классическим примером может быть хук для запроса данных по сети и отслеживания в процессе ли этот запрос сейчас, чтобы добавить на страницу лоадер."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "function useClient(clientId) {\n  const [loadedClient, setLoadedClient] = useState(null)\n  const [isLoading, setIsLoading] = useState(false)\n\n  useEffect(() => {\n    const loadClient = async () => {\n      try {\n        setIsLoading(true)\n        const clientData = {} // actual data loading call goes here\n        setLoadedClient(clientData)\n      }\n      finally {\n        setIsLoading(false)\n      }\n    }\n\n    loadClient()\n  }, [clientId])\n\n  return [loadedClient, isLoading]\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "В итоге вызываем его вот как-то так:"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "const [loadedClient, isLoading] = useClient(clientId)\n"
+        },
+        {
+          "id": "5",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/a66/a8d/ab1/a66a8dab15656fb895b396b8e7fe75db.png",
+          "title": "Картинка"
+        }
+      ]
+    }
+  ]
 }

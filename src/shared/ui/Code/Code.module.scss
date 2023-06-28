@@ -1,0 +1,23 @@
+.code {
+    display: flex;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--default-border-radius);
+    padding: var(--default-spacing);
+    position: relative;
+    background-color: var(--code-bg);
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.copy {
+    position: relative;
+    flex-shrink: 0;
+    width: 25px;
+}
+
+.copyIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
