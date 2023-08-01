@@ -1,8 +1,9 @@
-import { IUserSchema } from 'entities/User';
-import { ILoginSchema } from 'features/authByUsername';
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
+
+import { IUserSchema } from 'entities/User';
+import { ILoginSchema } from 'features/authByUsername';
 import { IProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import {
