@@ -29,6 +29,48 @@
       "text": "Я Бээээээээтмеееееееен",
       "articleId": 1,
       "userId": 2
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "Йоу, привет!",
+      "id": 4
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "Отправлю новый комментарий. Только теперь он будет отправлен уже со страницы статьи непосредственно",
+      "id": 5
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "Отправим еще один тестовый комментарий. На этот раз мы полностью отвзались от использования посторонних стейтов в фиче",
+      "id": 6
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "Нравится анимация на добавление коммента. Ради только этого я отправлю еще один новый",
+      "id": 7
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "Ну шо?",
+      "id": 8
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "Отправим еще комментик?",
+      "id": 9
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "А тут я уже с другим ником отправлю комментарий?",
+      "id": 10
     }
   ],
   "users": [
@@ -44,19 +86,33 @@
       "username": "Batman",
       "password": "batman",
       "role": "USER",
-      "avatar": "https://i.pinimg.com/originals/48/c4/bf/48c4bf1f29bf69ab6495a5896c1a6058.jpg"
+      "avatar": "https://static.vecteezy.com/system/resources/previews/021/671/874/large_2x/batman-logo-transparent-free-png.png"
     }
   ],
-  "profile": {
-    "name": "Андрей",
-    "surname": "Лапузин",
-    "age": "28",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Екатеринбург",
-    "username": "admin",
-    "avatar": "https://i.pinimg.com/originals/48/c4/bf/48c4bf1f29bf69ab6495a5896c1a6058.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "name": "Андрей",
+      "surname": "Лапузин",
+      "age": "29",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "Druce",
+      "avatar": "https://i.pinimg.com/originals/48/c4/bf/48c4bf1f29bf69ab6495a5896c1a6058.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Batman",
+      "surname": "Robinson",
+      "age": "43",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "Batman",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/021/671/874/large_2x/batman-logo-transparent-free-png.png"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -65,7 +121,10 @@
       "img": "https://as2.ftcdn.net/v2/jpg/03/88/26/77/1000_F_388267776_xuhQxwv0lNonSAk7MFeW63FoMTDaabQN.jpg",
       "views": 42,
       "createdAt": "12.05.2023",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",

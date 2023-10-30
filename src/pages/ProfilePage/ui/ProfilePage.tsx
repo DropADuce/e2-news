@@ -1,22 +1,22 @@
 import React, {
-    FC, useCallback, useEffect, useMemo, 
+    FC, useCallback, useMemo,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    ReducerLoader, TReducersList, 
+    ReducerLoader, TReducersList,
 } from 'shared/lib/components/ReucerLoader/ReducerLoader';
 import {
     fetchProfileData,
-    profileFormSelector,
     isProfileLoadingSelector,
     isReadonlyProfileSelector,
     profileActions,
     ProfileCard,
     profileErrorSelector,
     profileErrorsSelector,
+    profileFormSelector,
     profileReducer,
 } from 'entities/Profile';
 import classes from './ProfilePage.module.scss';
@@ -24,6 +24,8 @@ import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Text } from 'shared/ui/Text/Text';
 import { ValidateProfileData } from 'entities/Profile/model/types/profile';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 interface IProfilePageProps {
     mix?: string,
@@ -45,6 +47,8 @@ const ProfilePage: FC<IProfilePageProps> = ({
     const profileError = useSelector(profileErrorSelector);
     const validateErrors = useSelector(profileErrorsSelector);
 
+    const { id } = useParams<{ id: string }>();
+
     const updateProfile = profileActions.updateProfile;
 
     const updateField = useCallback((value: string, fieldName = '') => {
@@ -60,15 +64,15 @@ const ProfilePage: FC<IProfilePageProps> = ({
         [ValidateProfileData.NO_DATA]: t('Данные не заполнены'),
     }), []);
 
-    useEffect(() =>  {
-        if (__PROJECT__ === 'storybook') return;
-        dispatch(fetchProfileData());
-    }, [dispatch]);
+    useInitialEffect(() => {
+        dispatch(fetchProfileData(id ?? '1'));
+    });
 
     return (
         <ReducerLoader reducers={reducers}>
             <div className={classNames(classes.profilePage, {}, [mix])}>
                 <ProfilePageHeader />
+
                 {!!validateErrors?.length && validateErrors.map((error) => (
                     <Text
                         theme='error'
@@ -76,6 +80,7 @@ const ProfilePage: FC<IProfilePageProps> = ({
                         key={error}
                     />
                 ))}
+
                 <ProfileCard
                     data={profileFormData}
                     isLoading={isProfileLoading}

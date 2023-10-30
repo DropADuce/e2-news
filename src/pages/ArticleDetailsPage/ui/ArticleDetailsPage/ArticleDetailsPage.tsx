@@ -26,6 +26,8 @@ import {
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchComments } from 'pages/ArticleDetailsPage/model/services/comments/fetchComments';
+import { AddCommentForm } from 'features/addComment';
+import { sendCommentForArticle } from 'pages/ArticleDetailsPage/model/services/comments/sendCommentForArticle';
 
 const reducers: TReducersList = {
     articleDetails: articleDetailsReducer,
@@ -64,6 +66,8 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({
         <ReducerLoader reducers={reducers}>
             <div className={classNames(classes.articleDetailsPage, {}, [mix])}>
                 <ArticleDetails id={id} />
+
+                <AddCommentForm onSendComment={(text: string) => dispatch(sendCommentForArticle(text))}/>
 
                 <Text
                     mix={classes.commentsTitle}

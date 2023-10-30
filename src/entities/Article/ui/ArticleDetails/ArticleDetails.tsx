@@ -14,7 +14,8 @@ import {
     isArticleDetailsErrorSelector, isArticleDetailsLoadingSelector,
 } from 'entities/Article/model/selectors/selectors';
 import {
-    ReducerLoader, TReducersList,
+    ReducerLoader,
+    TReducersList,
 } from 'shared/lib/components/ReucerLoader/ReducerLoader';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import classes from './ArticleDetails.module.scss';

@@ -10,6 +10,7 @@ export enum ValidateProfileData {
 }
 
 export interface IProfile {
+    id?: string,
     name?: string
     surname?: string,
     age?: number,

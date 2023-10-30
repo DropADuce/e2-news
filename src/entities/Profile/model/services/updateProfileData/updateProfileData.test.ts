@@ -1,5 +1,5 @@
 import {
-    mockedAxios, testAsyncThunk, 
+    mockedAxios, testAsyncThunk,
 } from 'shared/lib/testAsyncThunk/testAsyncThunk';
 import { updateProfileData } from 'entities/Profile';
 import { Country } from 'entities/Country';
@@ -27,7 +27,7 @@ describe('updateProfileData', () => {
                 form: payload,
             },
         });
-        const result = await thunk();
+        const result = await thunk('1');
 
         expect(mockedAxios.put).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -42,7 +42,7 @@ describe('updateProfileData', () => {
                 form: payload,
             },
         });
-        const result = await thunk();
+        const result = await thunk('1');
 
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([ValidateProfileData.SERVER_ERROR]);
@@ -57,7 +57,7 @@ describe('updateProfileData', () => {
                 },
             },
         });
-        const result = await thunk();
+        const result = await thunk('1');
 
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([ValidateProfileData.INCORRECT_USER_DATA]);

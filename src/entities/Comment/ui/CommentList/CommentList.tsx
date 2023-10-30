@@ -25,7 +25,7 @@ export const CommentList: FC<ICommentListProps> = ({
             .map((comment) => (
                 <CommentCard
                     comment={comment}
-                    key={Date.now()}
+                    key={comment.id}
                     isLoading={isLoading}
                 />));
 
