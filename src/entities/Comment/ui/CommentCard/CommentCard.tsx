@@ -6,6 +6,8 @@ import { CommentCardSkeleton } from './CommentCardSkeleton';
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './CommentCard.module.scss';
 import { IComment } from '../../model/types/Comment';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Link } from 'shared/ui/Link';
 
 interface ICommentCardProps {
     comment: IComment,
@@ -28,24 +30,26 @@ export const CommentCard: FC<ICommentCardProps> = ({
         username,
     } = user;
 
-    if (isLoading) return <CommentCardSkeleton />;
+    if (isLoading) return <CommentCardSkeleton/>;
 
     return (
         <div className={classNames(classes.commentCard, {}, [mix])}>
-            <div className={classes.header}>
-                <div className={classes.username}>
-                    {avatar && (
-                        <Avatar
-                            src={avatar}
-                            size={30}
-                        />
-                    )}
+            <Link to={`${RoutePath.profile}${user.id}`}>
+                <div className={classes.header}>
+                    <div className={classes.username}>
+                        {avatar && (
+                            <Avatar
+                                src={avatar}
+                                size={30}
+                            />
+                        )}
 
-                    <Text title={username} />
+                        <Text title={username}/>
+                    </div>
                 </div>
-            </div>
+            </Link>
 
-            <Text text={text} />
+            <Text text={text}/>
         </div>
     );
 };

@@ -2,6 +2,10 @@
     flex-basis: content;
 }
 
+.inputWrapper.fullWidth {
+    flex-grow: 1;
+}
+
 .input {
     box-sizing: border-box;
     outline: none;
@@ -27,6 +31,10 @@
         }
     }
 
+    .fullWidth {
+        width: 100%;
+    }
+
     &:active,
     &:focus {
         border: none;
@@ -40,13 +48,21 @@
     }
 }
 
+.inputWrapper .input.underline {
+    &:hover,
+    &:active,
+    &:focus {
+        outline: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid var(--accent-color);
+    }
+}
+
 .readonly {
     background-color: transparent;
     border: none;
     box-shadow: none;
     pointer-events: none;
-}
-
-.fullWidth {
-    width: 100%;
 }

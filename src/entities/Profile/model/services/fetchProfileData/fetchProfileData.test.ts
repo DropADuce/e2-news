@@ -1,5 +1,5 @@
 import {
-    mockedAxios, testAsyncThunk, 
+    mockedAxios, testAsyncThunk,
 } from 'shared/lib/testAsyncThunk/testAsyncThunk';
 import { fetchProfileData } from 'entities/Profile';
 import { Country } from 'entities/Country';
@@ -22,7 +22,7 @@ describe('fetchProfileData', () => {
         }));
 
         const { thunk } = testAsyncThunk(fetchProfileData);
-        const result = await thunk();
+        const result = await thunk('1');
 
         expect(mockedAxios.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -33,7 +33,7 @@ describe('fetchProfileData', () => {
         mockedAxios.get.mockReturnValue(Promise.resolve({ status: 403 }));
 
         const { thunk } = testAsyncThunk(fetchProfileData);
-        const result = await thunk();
+        const result = await thunk('1');
 
         expect(result.meta.requestStatus).toBe('rejected');
     });

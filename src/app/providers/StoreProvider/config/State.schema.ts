@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom';
 import { IArticleDetailsSchema } from 'entities/Article';
 import { IArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { IAddCommentFormSchema } from 'features/addComment/model/types/addCommentForm';
 
 export interface IStateSchema {
     user: IUserSchema,
@@ -20,6 +21,7 @@ export interface IStateSchema {
     profile?: IProfileSchema,
     articleDetails?: IArticleDetailsSchema,
     articleDetailsComments?: IArticleDetailsCommentsSchema,
+    addCommentForm?: IAddCommentFormSchema,
 }
 
 export type TReducers = keyof IStateSchema

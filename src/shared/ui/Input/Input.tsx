@@ -1,5 +1,5 @@
 import React, {
-    InputHTMLAttributes, memo, useEffect, useRef, 
+    InputHTMLAttributes, memo, useEffect, useRef,
 } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -16,6 +16,7 @@ interface IInputProps extends THTMLInputElement{
     label?: string,
     mix?: string,
     name?: string,
+    pattern?: 'common' | 'underline'
     isFullWidth?: boolean,
 }
 
@@ -29,6 +30,7 @@ export const Input = memo(({
     isReadonly = false,
     name = '',
     isFullWidth = false,
+    pattern = 'common',
     ...props
 }: IInputProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -42,6 +44,7 @@ export const Input = memo(({
     const mods = {
         [classes.readonly]: isReadonly,
         [classes.fullWidth]: isFullWidth,
+        [classes.underline]: pattern === 'underline',
     };
 
     useEffect(() => {
@@ -51,7 +54,7 @@ export const Input = memo(({
     }, [inputRef, autofocus]);
 
     const component = (
-        <div className={classes.inputWrapper}>
+        <div className={classNames(classes.inputWrapper, { [classes.fullWidth]: isFullWidth })}>
             <input
                 ref={inputRef}
                 type={type}
